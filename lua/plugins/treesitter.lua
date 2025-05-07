@@ -8,7 +8,7 @@ return {
     config = function()
       require("nvim-treesitter.configs").setup({
         -- Make sure "julia" is on the list of parsers you want installed
-        ensure_installed = { "lua", "julia", "python", "vim", "bash", "r" },
+        ensure_installed = { "lua", "julia", "python", "vim", "bash", "r", "markdown", "rnoweb", "yaml" },
         highlight = { enable = true },
       })
     end,

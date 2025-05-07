@@ -25,7 +25,7 @@ return {
 	 
 	\usepackage[margin=1in]{geometry} 
 	\usepackage{amsmath,amsthm,amssymb,graphicx,mathtools,tikz,hyperref}
-	\usepackage{bm}
+	\usepackage[round]{natbib}
 	\usetikzlibrary{positioning}
 	\newcommand\proofs[1]{\begin{proof}#1\end{proof}}
 	\setcounter{MaxMatrixCols}{25}
@@ -40,10 +40,12 @@ return {
 	\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 	\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
 	\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-	 \hypersetup{
-	 colorlinks,
-	 linkcolor=blue
-	 }
+	\hypersetup{
+	    colorlinks,
+	    linkcolor={blue!50!black},
+	    citecolor={blue!50!black},
+	    urlcolor={blue!80!black}
+	}
 	\begin{document}
 	\date{\today}
 
@@ -55,12 +57,17 @@ return {
 	\section{<>}
 	<>
 
+	\bibliographystyle{<>}
+	\bibliography{<>}
+
 	\end{document}
         ]],
         {
           i(1),
           i(2),
           i(3),
+          i(4),
+          i(5),
         }
       ),
       { condition = line_begin }

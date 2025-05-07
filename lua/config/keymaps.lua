@@ -16,3 +16,10 @@ api.nvim_set_keymap("n", "<CR>", ":SlimeSend<CR>j", { noremap = true, silent = t
 api.nvim_set_keymap("n", "K", ":call LanguageClient_textDocument_hover()<CR>", { noremap = true, silent = true })
 api.nvim_set_keymap("n", "gd", ":call LanguageClient_textDocument_definition()<CR>", { noremap = true, silent = true })
 api.nvim_set_keymap("n", "<F2>", ":call LanguageClient_textDocument_rename()<CR>", { noremap = true, silent = true })
+
+-- Map <Tab> to :bnext
+vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
+
+-- Map <S-Tab> to :bprev
+vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprev<CR>", { noremap = true, silent = true })
+

@@ -19,7 +19,7 @@ end
 return
   {
     -- ANNOTATE (custom command for annotating equation derivations)
-    s({trig = "ann", snippetType="autosnippet"},
+    s({trig = "anno", snippetType="autosnippet"},
       fmta(
         [[
       \annotate{<>}{<>}

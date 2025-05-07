@@ -42,6 +42,15 @@ return
         }
       )
     ),
+    s({trig = "op", snippetType="autosnippet", condition = tex.in_mathzone},
+      fmta(
+        "\\operatorname{<>}(<>)",
+        {
+          d(1, get_visual),
+	  i(2)
+        }
+      )
+    ),
     -- MATH ROMAN i.e. \mathrm
     s({trig = "([^%a])rmm", regTrig = true, wordTrig = false, snippetType="autosnippet"},
       fmta(
@@ -82,16 +91,24 @@ return
         }
       )
     ),
+    s({trig = "([^%a])bss", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+      fmta(
+        "<>\\boldsymbol{<>}",
+        {
+          f( function(_, snip) return snip.captures[1] end ),
+          d(1, get_visual),
+        }
+      )
+    ),
 
     -- Set of Reals
-    s({trig = "RR", regTrig = true, wordTrig = false, snippetType="autosnippet"},
+    s({trig = "([^%a])RR", regTrig = true, wordTrig = false, snippetType="autosnippet", condition = tex.in_mathzone},
       fmta(
         "<>\\mathbb{R}^{<>}",
         {
           f( function(_, snip) return snip.captures[1] end ),
           d(1, get_visual),
-        },
-	{condition = tex.in_mathzone}
+        }
       )
     ),
     -- MATH BLACKBOARD i.e. \mathbb

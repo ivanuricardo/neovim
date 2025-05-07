@@ -1,5 +1,4 @@
-return {
-  { "stevearc/dressing.nvim", enabled = false },
+return { { "stevearc/dressing.nvim", enabled = false },
   {
     "quarto-dev/quarto-nvim",
     opts = {
@@ -26,7 +25,9 @@ return {
       { "<leader>ctR", ":botright vsplit term://R<cr>:vertical resize -10<cr>", desc = "R vsplit" },
       { "<leader>ctp", ":split term://python<cr>", desc = "terminal: python" },
       { "<leader>j", ":botright vsplit term://julia<cr>:vertical resize -10<cr>", desc = "julia vsplit" },
-      { "<leader>J", ":botright split term://julia<cr>", desc = "julia hsplit" },
+      { "<leader>J", ":botright split term://julia<cr>:horizontal resize -15<cr>", desc = "julia hsplit" },
+      { "<leader>T", ":botright 22split | term<cr>", desc = "julia hsplit" },
+      { "<leader>t", ":botright vsplit | term<cr>:vertical resize -10<cr>", desc = "julia hsplit" },
     },
   },
 

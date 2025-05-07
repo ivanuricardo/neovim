@@ -24,29 +24,27 @@ tex.in_text = function() return not tex.in_mathzone() end
 return
 {
   -- SUPERSCRIPT
-  s({trig = "([%w%)%]%}])'", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+  s({trig = "([%w%)%]%}])'", wordTrig=false, regTrig = true, snippetType="autosnippet", condition = tex.in_mathzone},
     fmta(
       "<>^{<>}",
       {
         f( function(_, snip) return snip.captures[1] end ),
         d(1, get_visual),
       }
-    ),
-    {condition = tex.in_mathzone}
+    )
   ),
   -- SUBSCRIPT
-  s({trig = "([%w%)%]%}]);", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+  s({trig = "([%w%)%]%}]);", wordTrig=false, regTrig = true, snippetType="autosnippet", condition = tex.in_mathzone},
     fmta(
       "<>_{<>}",
       {
         f( function(_, snip) return snip.captures[1] end ),
         d(1, get_visual),
       }
-    ),
-    {condition = tex.in_mathzone}
+    )
   ),
   -- SUBSCRIPT AND SUPERSCRIPT
-  s({trig = "([%w%)%]%}])__", wordTrig=false, regTrig = true, snippetType="autosnippet"},
+  s({trig = "([%w%)%]%}])__", wordTrig=false, regTrig = true, snippetType="autosnippet", condition = tex.in_mathzone},
     fmta(
       "<>^{<>}_{<>}",
       {
@@ -54,15 +52,13 @@ return
         i(1),
         i(2),
       }
-    ),
-    {condition = tex.in_mathzone}
+    )
   ),
   -- TEXT SUBSCRIPT
-  s({trig = 'sd', snippetType="autosnippet", wordTrig=false},
+  s({trig = 'sd', snippetType="autosnippet", wordTrig=false, condition = tex.in_mathzone},
     fmta("_{\\mathrm{<>}}",
       { d(1, get_visual) }
-    ),
-    {condition = tex.in_mathzone}
+    )
   ),
   -- SUPERSCRIPT SHORTCUT
   -- Places the first alphanumeric character after the trigger into a superscript.

@@ -78,8 +78,25 @@ return
       ),
       {condition = line_begin}
     ),
+    -- Testing
+    s({trig="test", snippetType = "autosnippet"},
+      fmta(
+        [[
+        @testset "<>" begin
+            <>
+	    @test <>
+        end
+      ]],
+        {
+          i(1),
+          i(2),
+          d(3, get_visual),
+        }
+      ),
+      {condition = line_begin}
+    ),
     -- RETURN STATEMENT
-    s({trig = ";r", snippetType = "autosnippet"},
+    s({trig = ",r", snippetType = "autosnippet"},
       { t("return") },
       { condition = line_begin }
     ),
