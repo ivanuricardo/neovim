@@ -31,10 +31,10 @@ return
       )
     ),
     -- REFERENCE
-    s({trig = "@", snippetType="autosnippet", wordTrig=false},
+    s({trig = "@", wordTrig=false},
       fmta(
         [[
-      ~\ref{<>}
+      \ref{<>}
       ]],
         {
           d(1, get_visual),

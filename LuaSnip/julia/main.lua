@@ -82,10 +82,10 @@ return
     s({trig="test", snippetType = "autosnippet"},
       fmta(
         [[
-        @testset "<>" begin
-            <>
-	    @test <>
-        end
+@testset "<>" begin
+    <>
+    @test <>
+end
       ]],
         {
           i(1),
