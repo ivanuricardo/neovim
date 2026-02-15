@@ -5,7 +5,8 @@ require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/LuaSnip/"})
 require("luasnip.loaders.from_lua").lazy_load({paths = "~/.config/nvim/LuaSnip/"})
 require("luasnip").filetype_extend("plaintex", {"tex"})
 
-vim.cmd([[colorscheme catppuccin-macchiato]])
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath("state") .. "/undo"
 
 -- Auto-format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
@@ -49,6 +50,13 @@ vim.cmd[[
     imap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'
     smap <silent><expr> jk luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : 'jk'
 ]]
+
+vim.keymap.set("n", "<leader>dd", "<cmd>bdelete<cr>", { desc = "Delete buffer" })
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.R",
