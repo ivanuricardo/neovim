@@ -20,29 +20,28 @@ return {
       vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
       require("catppuccin").setup({
-        background = { light = "latte", dark = "mocha" },
-        transparent_background = transparent_background,
-        dim_inactive = { enabled = false, shade = "dark", percentage = 0.15 },
-        show_end_of_buffer = false,
-        term_colors = true,
-        styles = {
-          comments = { "italic" },
-          functions = { "bold" },
-          keywords = { "italic" },
-          operators = { "bold" },
-          conditionals = { "bold" },
-          loops = { "bold" },
-          booleans = { "bold", "italic" },
-        },
-        highlight_overrides = {
-          all = function(cp)
-            return {
-              NormalFloat = { fg = cp.text, bg = transparent_background and cp.none or cp.mantle },
-              FloatBorder = { fg = transparent_background and cp.blue or cp.mantle, bg = transparent_background and cp.none or cp.mantle },
-              CursorLineNr = { fg = cp.green },
-              -- optionally add a few more key UI highlights if you want
-            }
-          end,
+        flavour = "mocha",
+        color_overrides = {
+  	mocha = {
+  	  base = "#1d181e",     -- background base
+  	  mantle = "#2a232d",   -- secondary background
+  	  crust = "#11111b",    -- darkest background
+  	  text = "#cdd6f4",     -- main foreground text
+  	  rosewater = "#f5e0dc", -- adjust highlights
+  	  flamingo = "#f2cdcd",
+  	  pink = "#f5c2e7",
+  	  mauve = "#89b4fa",
+  	  red = "#f38ba8",
+  	  maroon = "#eba0ac",
+  	  peach = "#fab387",
+  	  yellow = "#f9e2af",
+  	  green = "#aaf7a6",
+  	  teal = "#94e2d5",
+  	  sky = "#89dceb",
+  	  sapphire = "#74c7ec",
+  	  blue = "#cba6f7",
+  	  lavender = "#b4befe",
+  	},
         },
       })
 
