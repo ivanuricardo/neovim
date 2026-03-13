@@ -16,9 +16,6 @@ return {
       local transparent_background = false -- change if you want transparency
       local clear = {}
 
-      -- Set flavor before setup
-      vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-
       require("catppuccin").setup({
         flavour = "mocha",
         color_overrides = {
@@ -46,7 +43,7 @@ return {
       })
 
       -- Apply the colorscheme
-      vim.cmd.colorscheme("catppuccin")
+      vim.cmd.colorscheme("catppuccin-nvim")
     end,
   }
 }
