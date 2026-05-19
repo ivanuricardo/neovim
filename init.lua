@@ -7,6 +7,7 @@ require("luasnip").filetype_extend("plaintex", {"tex"})
 
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.stdpath("state") .. "/undo"
+vim.opt.timeoutlen = 100  -- reduce wait from 1s to 200ms
 
 -- Auto-format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
