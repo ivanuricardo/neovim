@@ -1,15 +1,39 @@
 return {
-  -- Lazy manager bootstrapping omitted for brevity
-
-  -- 1. Treesitter for syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",  -- Ensures parsers are installed/updated
+    lazy = false,
+    build = ":TSUpdate",
+
     config = function()
-      require("nvim-treesitter.configs").setup({
-        -- Make sure "julia" is on the list of parsers you want installed
-        ensure_installed = { "lua", "julia", "python", "vim", "bash", "r", "markdown", "rnoweb", "yaml" },
-        highlight = { enable = true },
+      require("nvim-treesitter").setup()
+
+      require("nvim-treesitter").install({
+        "lua",
+        "julia",
+        "python",
+        "vim",
+        "bash",
+        "r",
+        "markdown",
+        "rnoweb",
+        "yaml",
+      })
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = {
+          "lua",
+          "julia",
+          "python",
+          "vim",
+          "bash",
+          "r",
+          "markdown",
+          "rnoweb",
+          "yaml",
+        },
+        callback = function()
+          vim.treesitter.start()
+        end,
       })
     end,
   },

@@ -7,6 +7,8 @@ local fmt = require("luasnip.extras.fmt").fmt
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 local line_begin = require("luasnip.extras.expand_conditions").line_begin
+local sn = ls.snippet_node
+local d  = ls.dynamic_node
 
 local get_visual = function(args, parent)
   if (#parent.snippet.env.LS_SELECT_RAW > 0) then

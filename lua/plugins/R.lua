@@ -6,7 +6,7 @@ return {
     -- R.nvim is still young and we may make some breaking changes from time
     -- to time. For now we recommend pinning to the latest minor version
     -- like so:
-    version = "~0.1.0",
+    version = "^1.0.0",
     config = function()
         -- Create a table with the options to be passed to setup()
         ---@type RConfigUserOpts
